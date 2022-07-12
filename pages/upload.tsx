@@ -8,6 +8,7 @@ import { MdDelete } from 'react-icons/md';
 
 import useAuthStore from '../store/authStore';
 import { client } from '../utils/client';
+import { BASE_URL } from '../utils';
 
 const Upload = () => {
   const router = useRouter();
@@ -68,7 +69,7 @@ const Upload = () => {
         topic: category,
       };
       console.log(document);
-      await axios.post('http://localhost:3000/api/post', document);
+      await axios.post(`${BASE_URL}/api/post`, document);
       router.push('/');
     }
   };
